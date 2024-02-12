@@ -1,0 +1,136 @@
+.back{
+    padding: 30px;
+    background: #ebebeb;
+}
+
+.about h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-align: center; /* Center the h2 text */
+}
+
+.about h2 span {
+    color: rgb(226, 204, 56);; /* Change the color of the span text to orange (adjust as needed) */
+}
+
+.nav-pills-container {
+    display: flex;
+    flex-direction: row; /* Change to row */
+    justify-content: center; /* Center the items horizontally */
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-pills-container .nav-item {
+    margin-right: 10px; /* Adjust the spacing between items */
+}
+
+.nav-pills-container .nav-link {
+    text-decoration: none;
+    color: #333;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.nav-link:hover{
+    cursor: pointer;
+}
+
+.nav-pills-container .nav-link.active  {
+    background-color:rgb(0, 0, 0);;
+    color: rgb(226, 204, 56);
+    
+}
+
+.imagecon {
+    display: flex;
+    align-items: center;
+    padding: 20px; /* Adjust padding for the entire section */
+}
+
+.inside1, .inside2 {
+    flex: 1;
+}
+
+.imagecon .tab-content-container {
+    width: 50%;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    overflow: hidden; /* Ensure the border radius doesn't affect the image */
+    margin-left: 20px; /* Add margin to separate the image from the content */
+}
+
+.imagecon img {
+    width: 50%; /* Adjust the width of the image as needed */
+    height: auto;
+    border-radius: 10px; /* Add border-radius for rounded corners */
+}
+
+.imagecon .content-column {
+    padding: 20px; /* Adjust padding for the content */
+}
+
+/* Add this CSS to your stylesheet */
+.imagecon {
+    display: flex;
+    align-items: center;
+    padding: 20px; /* Adjust padding for the entire section */
+}
+
+.inside1, .inside2 {
+    flex: 1;
+}
+
+.imagecon .tab-content-container {
+    width: 50%;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    overflow: hidden; /* Ensure the border radius doesn't affect the image */
+    margin-left: 20px; /* Add margin to separate the image from the content */
+}
+
+.imagecon img {
+    width: 100%; /* Adjust the width of the image to 100% */
+    height: auto;
+    border-radius: 10px;
+}
+
+.imagecon .content-column {
+    padding: 20px; /* Adjust padding for the content */
+    text-align: left; /* Center the content text */
+}
+
+
+.imagecon h4 {
+    margin-top: 5px;
+    font-size: 2rem; /* Change the font size to make it similar to an h2 */
+    margin-bottom: 5px;
+}
+
+.imagecon a.custom-link {
+    display: inline-block;
+    background-color: #000000;
+    color: rgb(226, 204, 56);;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.imagecon p{
+    margin-top: 0%;
+    margin-bottom: 3px;
+}
+
+h2.mb-5 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,84 @@
+/* navigation.component.css */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+  }
+  .left img {
+    max-height: 40px; 
+  }
+  
+  .left, .right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    cursor: pointer;
+  }
+  .page-name.active,
+  .page-name:hover {
+    color: rgb(226, 204, 56); /* Change this to your desired color for the active page and hover effect */
+    transition: color 0.3s;
+  }
+  
+  .page-name {
+    margin: 0 15px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  
+  
+  .right {
+    cursor: pointer;
+  }
+  
+  /* .search{
+   margin-right: 5px;
+  } */
+
+  .login-signup {
+    margin-left: 10px;
+    color: rgb(226, 204, 56);
+    text-decoration: none;
+  }
+  
+
+
+/* 
+  navigation.component.css
+
+/* Add styling for the avatar and user dropdown */
+/* .user-dropdown {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.user-dropdown img {
+  max-height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.user-dropdown.active .dropdown-content {
+  display: block;
+/* } */ 

@@ -1,0 +1,54 @@
+<!-- fundrequest.component.html -->
+<app-navbar></app-navbar>
+
+<!-- <div class="section-container" style="background-image: url('../assets/assetss/SIGNBACK.jpg');"></div> -->
+
+<div class="section-container">
+  <div class="left-section">
+    <div class="content">
+      <h2>FILL THIS FORM IF YOU NEED HELP</h2>
+      <form #fundRequestForm="ngForm" (ngSubmit)="submitForm(fundRequestForm)">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" ngModel #email="ngModel" required>
+
+        <label for="fundraisingOption">Do you want to show your identity?</label>
+        <select id="fundraisingOption" name="fundraisingOption" ngModel #fundraisingOption="ngModel" required>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        <label for="fundraisingAmount">Fundraising Amount:</label>
+        <input type="number" id="fundraisingAmount" name="fundraisingAmount" step="1" ngModel #fundraisingAmount="ngModel" required>
+
+        <label for="fundraisingRequest">Why do you need money?:</label>
+        <textarea id="fundraisingRequest" name="fundraisingRequest" rows="4" cols="50" ngModel #fundraisingRequest="ngModel" required></textarea>
+        
+        <div *ngIf="fundRequestForm.invalid"  class="error-message">
+          Please fill out all the fields
+        </div>
+        <div *ngIf="fundRequestForm.valid" class="message">
+          please check your information again
+        </div>
+  
+        <button type="submit" [disabled]="fundRequestForm.invalid">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="right-section">
+    <div class="content">
+      <h2>READ THE INSTRUCTION CAREFULLY</h2>
+
+      <ul>
+        <li>please enter a registered email.</li>
+        <li>Select "Yes" if you want your identity to be visible, and "No" if you prefer to remain anonymous</li>
+        <li>Enter the amount you are looking to raise as a fundraising goal. Please input a numerical value representing
+          the monetary target for your campaign</li>
+        <li>Please provide a detailed explanation of why you are seeking financial assistance. Outline the purpose,
+          circumstances, or any relevant information that can help donors understand your fundraising cause.</li>
+        <li>Kindly revisit our website to track the status of your request. Our dedicated admin team will carefully
+          review your submission. We appreciate your patience during this process.</li>
+      </ul>
+    </div>
+  </div>
+</div>

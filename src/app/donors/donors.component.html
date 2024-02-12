@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<div>
+    <h2 class="donor-heading">Our Respected Donors</h2> 
+</div>
+
+<div class="donor-container">
+  
+
+  <div *ngFor="let user of users" class="donor-card">
+    <div class="avatar">
+      <img [src]="generateAvatarUrl(user.email)" alt="Donor Avatar">
+    </div>
+    <h3>{{ user.name }}</h3>
+    <p>{{ user.email }}</p>
+  </div>
+</div>

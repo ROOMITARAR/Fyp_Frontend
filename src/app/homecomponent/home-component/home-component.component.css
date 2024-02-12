@@ -1,0 +1,79 @@
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    /* Replace 'path-to-your-image.jpg' with the actual path to your image file */
+}
+
+.login-form-section {
+    text-align: left; /* Align text to the left */
+    padding: 50px; /* Increase padding to make the section bigger */
+    box-sizing: border-box;
+    border: 2px solid rgb(226, 204, 56);
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 80%; /* Adjust the width of the login form section */
+    max-width: 600px; /* Set a maximum width for responsiveness */
+    position: relative;
+    margin-top: 20px;
+    margin-left: 45px; /* Add left margin for spacing */
+}
+
+.login-form-section h2,
+.login-form-section p,
+.login-form-section a {
+    color: white; /* Set text color to white */
+}
+
+.login-form-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px; /* Add spacing between heading and other elements */
+}
+
+.login-form-section p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    margin-top: 0px;
+
+}
+
+.login-form-section a {
+    color: rgb(226, 204, 56);
+    text-decoration: none;
+    display: inline;
+    margin-top: 10px; /* Add spacing above the text link */
+}
+
+.btn-box {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn1 {
+    display: inline-block; /* Center the button */
+    padding: 10px 20px;
+    font-size: 16px;
+    color: rgb(226, 204, 56);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right:2px; /* Add spacing above the button */
+    /* Make the button full width */
+}
+
+.btn2 {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: rgb(226, 204, 56);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left:2px; /* Add spacing above the button */
+    /* Make the button full width */
+}

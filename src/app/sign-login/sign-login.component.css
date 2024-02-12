@@ -1,0 +1,55 @@
+/* image-section.component.css */
+
+.section-container {
+  display: flex;
+  justify-content: space-between;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 100vh; 
+  background-color: black;/* Set height to full viewport height */
+}
+
+.left-section,
+.right-section,
+.center-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  margin: 30px;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 2px solid rgb(226, 204, 56);
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content {
+  text-align: center;
+}
+
+h2,
+p,
+button {
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: rgb(226, 204, 56);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  cursor: pointer;
+}

@@ -1,0 +1,39 @@
+<!-- signup-page.component.html -->
+
+<div class="signup-container" style="background-image: url('../assets/assetss/SIGNBACK.jpg');">
+    <!-- Background image and text section -->
+    <!-- Signup form section -->
+    <div class="signup-form-section">
+      <h2>STUDENT SIGNUP FORM</h2>
+      <form [formGroup]= "form" (submit)="submit()" >
+        <label for="name">Name:</label>
+        <input formControlName="name" type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input formControlName="email" type="email" id="email" name="email" required>
+  
+        <label for="password">Password:</label>
+        <input formControlName="password" type="password" id="password" name="password" required>
+  
+        <label for="confirm-password">Confirm Password:</label>
+        <input formControlName="confirmpassword" type="password" id="confirm-password" name="confirm-password" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" formControlName="gender" name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="cgpa">CGPA:</label>
+        <input formControlName="cgpa" type="text" id="cgpa" name="cgpa" required>
+
+        <label for="transcriptFile">Upload Transcript Image:</label>
+        <input formControlName="transcriptFile" id="transcriptFile" type="file" (change)="onFileChange($event)" accept=".pdf, .doc, .docx">
+  
+        <button type="submit">Sign Up</button>
+      </form>
+  
+      <p>Already have an account? <a routerLink="/stu-login">Login Now</a></p>
+    </div>
+</div>

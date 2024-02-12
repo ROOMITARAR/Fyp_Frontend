@@ -1,0 +1,73 @@
+/* login-page.component.css */
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .login-form-section {
+    text-align: center; /* Center text in the form section */
+    padding: 50px; /* Increase padding to make the section bigger */
+    box-sizing: border-box;
+    border: 2px solid rgb(226, 204, 56);
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 70%; /* Adjust the width of the login form section */
+    max-width: 500px; /* Set a maximum width for responsiveness */
+    position: relative;
+  }
+  
+  .login-form-section h2,
+  .login-form-section p,
+  .login-form-section button,
+  .login-form-section label,
+  .login-form-section input,
+  .login-form-section a {
+    color: white; /* Set text color to white */
+  }
+  
+  .login-form-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px; /* Add spacing between heading and other elements */
+  }
+  
+  .login-form-section p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .login-form-section label {
+    display: block; /* Ensure labels are on a new line */
+    margin-bottom: 5px;
+  }
+  
+  .login-form-section input {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    color: black;
+  }
+  
+  .login-form-section button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: rgb(226, 204, 56);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
+    margin-top: 10px; /* Add spacing above the button */
+    width: 100%; /* Make the button full width */
+  }
+  
+  .login-form-section a {
+    color: #007bff;
+    text-decoration: none;
+    display: block; /* Center the text link */
+    margin-top: 10px; /* Add spacing above the text link */
+  }
+  

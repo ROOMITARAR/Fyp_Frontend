@@ -1,0 +1,27 @@
+
+<!-- signup-page.component.html -->
+
+<div class="signup-container" style="background-image: url('../assets/assetss/SIGNBACK.jpg');">
+    <!-- Background image and text section -->
+    <!-- Signup form section -->
+    <div class="signup-form-section">
+      <h2>DONOR SIGNUP FORM</h2>
+      <form [formGroup]="form" (submit)="submit()">
+        <label for="name">Name:</label>
+        <input formControlName="name" type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input formControlName="email" type="email" id="email" name="email" required>
+  
+        <label for="password">Password:</label>
+        <input formControlName="password" type="password" id="password" name="password" required>
+  
+        <label for="confirmpassword">Confirm Password:</label>
+        <input formControlName="confirmpassword" type="password" id="confirmpassword" name="confirmpassword" required>
+  
+        <button type="submit">Sign Up</button>
+      </form>
+  
+      <p>Already have an account? <a routerLink="/do-login">Login Now</a></p>
+    </div>
+</div>

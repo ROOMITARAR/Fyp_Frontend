@@ -1,0 +1,21 @@
+<!-- login-page.component.html -->
+
+<div class="login-container" style="background-image: url('../assets/assetss/SIGNBACK.jpg');">
+    <!-- Background image and text section -->
+    <!-- Login form section -->
+    <div class="login-form-section">
+      <h2>STUDENT LOGIN FORM</h2>
+      <form [formGroup]="form" (submit)="submit()" >
+        <label for="email">Email:</label>
+        <input formControlName="email" type="email" id="email" name="email" required>
+  
+        <label for="password">Password:</label>
+        <input formControlName="password" type="password" id="password" name="password" required>
+  
+        <button type="submit">Login</button>
+      </form>
+  
+      <p>Don't have an account? <a routerLink="/stu-signup">Register Now</a></p>
+    </div>
+  </div>
+  

@@ -1,0 +1,145 @@
+/* image-section.component.css */
+
+.section-container {
+  display: flex;
+  justify-content: space-between;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 100vh;
+  background-color: black; /* Set height to full viewport height */
+}
+
+.left-section,
+.right-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  margin: 30px;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 2px solid rgb(226, 204, 56);
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content {
+  text-align: left;
+}
+
+h2,
+p,
+button {
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+.left-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: rgb(226, 204, 56);
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: rgb(226, 204, 56);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Add smooth transition effect */
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Change background color on hover */
+}
+
+/* Styles for the form */
+form {
+  width: 100%;
+  max-width: 500px; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center the form */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical; /* Allow vertical resizing of textarea */
+}
+
+button {
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* Add this to your existing CSS or create a new stylesheet */
+
+.right-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: rgb(226, 204, 56);
+  align-self: flex-start;
+}
+
+.right-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.right-section li {
+  font-size: 18px;
+  margin-bottom: 20px;
+  padding-left: 10px; /* Add padding to the left of each list item */
+  display: flex;
+  align-items: baseline;
+  color: white;
+}
+
+.right-section li::before {
+  content: '🌟';
+  margin-right: 10px;
+  color: rgb(226, 204, 56);
+}
+
+.left-section h2,
+.right-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: rgb(226, 204, 56);
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.message {
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  margin-top: 5px;
+}
+
