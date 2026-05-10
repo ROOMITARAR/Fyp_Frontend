@@ -57,27 +57,51 @@ export class StuSignupComponent implements OnInit {
     const user = this.form.getRawValue();
 
     if (user.name == "" || user.email == "" || user.password == "" || user.confirmpassword == "" || user.gender == "" || user.cgpa == "") {
-      Swal.fire("ERROR", "PLEASE ENTER ALL THE FIELDS", "error");
+      Swal.fire({
+        title: 'Empty Fields',
+        text: 'Please fill out all the fields to register.',
+        icon: 'warning'
+      });
       return;
     }
     else if (!this.ValidateEmail(user.email)) {
-      Swal.fire("ERROR", "PLEASE ENTER A VALID EMAIL", "error");
+      Swal.fire({
+        title: 'Invalid Email',
+        text: 'Please enter a valid email address.',
+        icon: 'warning'
+      });
       return;
     }
     else if (!this.validatePasswordLength(user.password)) {
-      Swal.fire("ERROR", "PASSWORD MUST BE AT LEAST 8 CHARACTERS", "error");
+      Swal.fire({
+        title: 'Weak Password',
+        text: 'Your password must be at least 8 characters long.',
+        icon: 'warning'
+      });
       return;
     }
     else if (user.password != user.confirmpassword) {
-      Swal.fire("ERROR", "PASSWORDS DO NOT MATCH", "error");
+      Swal.fire({
+        title: 'Password Mismatch',
+        text: 'Confirm password does not match your password.',
+        icon: 'warning'
+      });
       return;
     }
     else if (!this.validateCGPA(user.cgpa)) {
-      Swal.fire("ERROR", "PLEASE ENTER A VALID CGPA (e.g. 3.50)", "error");
+      Swal.fire({
+        title: 'Invalid CGPA',
+        text: 'Please enter a valid CGPA format (e.g. 3.50).',
+        icon: 'warning'
+      });
       return;
     }
     else if (!this.transcriptFile) {
-      Swal.fire('ERROR', 'Please upload your transcript file', 'error');
+      Swal.fire({
+        title: 'No Transcript',
+        text: 'Please upload your official transcript file.',
+        icon: 'warning'
+      });
       return;
     }
     else {
@@ -96,8 +120,19 @@ export class StuSignupComponent implements OnInit {
           this.form.reset();
           this.router.navigate(['/fundrequest']);
           Emitters.authenticated = true;
+          Swal.fire({
+            title: 'Welcome to StuCare!',
+            text: 'Your student account has been successfully created.',
+            icon: 'success'
+          });
         },
-        (err) => Swal.fire('ERROR', err.error.message, 'error')
+        (err) => {
+          Swal.fire({
+            title: 'Registration Failed',
+            text: err.error.message || 'An error occurred during registration.',
+            icon: 'error'
+          });
+        }
       );
     }
   }

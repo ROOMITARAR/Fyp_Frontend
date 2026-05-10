@@ -41,29 +41,38 @@ export class DoLoginComponent implements OnInit {
     let user=this.form.getRawValue()
 
     if (user.email == "" || user.password == ""  ) {
-      Swal.fire("ERROR", "PLEASE ENTER ALL THE FIELDS", "error");
+      Swal.fire({
+        title: 'Empty Fields',
+        text: 'Please enter both your email and password.',
+        icon: 'warning'
+      });
       return;
     }
     else if(!this.ValidateEmail(user.email)){
-      Swal.fire("ERROR","PLEASE ENTER A VALID EMAIL","error")
-      return
-   }
-   else{
-
-    this.http.post(`${environment.apiUrl}/api/login`,user,{
-      withCredentials:true
-    })
-    .subscribe((res)=> {
-      this.form.reset();
-      this.router.navigate(['/home']);
-      Emitters.authenticated = true;
-    },
- (err) =>{
-      Swal.fire("ERROR",err.error.message,"error")
-      return
-    })
-
-   }
+      Swal.fire({
+        title: 'Invalid Email',
+        text: 'Please enter a valid email address.',
+        icon: 'warning'
+      });
+      return;
+    }
+    else {
+      this.http.post(`${environment.apiUrl}/api/login`, user, {
+        withCredentials: true
+      })
+      .subscribe((res) => {
+        this.form.reset();
+        this.router.navigate(['/home']);
+        Emitters.authenticated = true;
+      }, (err) => {
+        Swal.fire({
+          title: 'Login Failed',
+          text: err.error.message || 'Invalid email or password.',
+          icon: 'error'
+        });
+        return;
+      });
+    }
 
 
   }

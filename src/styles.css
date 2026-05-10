@@ -338,3 +338,49 @@ a:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(201, 168, 76, 0.5);
 }
+
+/* =========================================
+   SWEETALERT2 CUSTOM PREMIUM OVERRIDES
+   ========================================= */
+.swal2-popup {
+  background: #141414 !important;
+  border: 1px solid rgba(201,168,76,0.2) !important;
+  border-radius: var(--radius-lg) !important;
+  color: var(--white) !important;
+  font-family: var(--font-body) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6) !important;
+}
+
+.swal2-title {
+  font-family: var(--font-display) !important;
+  color: var(--gold) !important;
+  font-weight: 400 !important;
+  font-size: 1.8rem !important;
+}
+
+.swal2-html-container,
+.swal2-content {
+  color: var(--white-soft) !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+}
+
+.swal2-confirm.swal2-styled {
+  background-color: var(--gold) !important;
+  color: var(--black) !important;
+  font-family: var(--font-body) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 10px 24px !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.swal2-confirm.swal2-styled:hover {
+  background-color: var(--gold-light) !important;
+  transform: translateY(-1px);
+}
