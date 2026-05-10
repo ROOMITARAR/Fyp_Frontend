@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3001'
+  apiUrl: 'https://auth-backend-e10c8jml9-abdulrehmanrumitarar-3464s-projects.vercel.app'
 };
