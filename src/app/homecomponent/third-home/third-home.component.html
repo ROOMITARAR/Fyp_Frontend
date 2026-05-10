@@ -1,0 +1,54 @@
+<section class="donors-preview">
+  <div class="section-header">
+    <span class="section-label">Community</span>
+    <h2 class="section-title">Our <em class="accent">Generous</em> Donors</h2>
+    <p class="section-desc">
+      These incredible individuals have changed students' lives through their kindness and generosity.
+    </p>
+  </div>
+
+  <div class="donors-grid">
+    <div class="donor-card">
+      <div class="donor-avatar">
+        <span>A</span>
+      </div>
+      <h4>Ahmad Ali</h4>
+      <p>Supporting education <br>since 2023</p>
+      <div class="donor-badge">Patron</div>
+    </div>
+    <div class="donor-card featured">
+      <div class="donor-avatar large">
+        <span>S</span>
+      </div>
+      <h4>Sara Khan</h4>
+      <p>Believes every student <br>deserves a chance</p>
+      <div class="donor-badge gold">Top Donor</div>
+    </div>
+    <div class="donor-card">
+      <div class="donor-avatar">
+        <span>M</span>
+      </div>
+      <h4>Muhammad Usman</h4>
+      <p>Empowering future <br>leaders of Pakistan</p>
+      <div class="donor-badge">Patron</div>
+    </div>
+    <div class="donor-card">
+      <div class="donor-avatar">
+        <span>F</span>
+      </div>
+      <h4>Fatima Raza</h4>
+      <p>Passionate about<br>accessible education</p>
+      <div class="donor-badge">Patron</div>
+    </div>
+  </div>
+
+  <div class="donors-cta">
+    <a routerLink="/donors" class="cta-btn">
+      View All Donors
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+      </svg>
+    </a>
+    <a *ngIf="!authenticated" routerLink="/donate-now" class="cta-btn-outline">Become a Donor</a>
+  </div>
+</section>

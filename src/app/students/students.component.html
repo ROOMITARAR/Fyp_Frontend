@@ -1,0 +1,76 @@
+<app-navbar></app-navbar>
+
+<div class="students-page">
+  <section class="students-hero">
+    <div class="hero-orb"></div>
+    <span class="section-label">Our Students</span>
+    <h1 class="hero-title">Student <em class="accent">Community</em></h1>
+    <p class="hero-desc">
+      Bright minds working hard to build a better tomorrow.
+      Support a student today and change a life forever.
+    </p>
+  </section>
+
+  <!-- Info cards -->
+  <section class="info-section">
+    <div class="info-grid">
+      <div class="info-block">
+        <span class="big-num">500+</span>
+        <h4>Registered Students</h4>
+        <p>Students from across Pakistan have registered on StuCare seeking financial assistance.</p>
+      </div>
+      <div class="info-block featured">
+        <span class="big-num">72%</span>
+        <h4>Requests Fulfilled</h4>
+        <p>The majority of fund requests submitted are matched with generous donors within weeks.</p>
+      </div>
+      <div class="info-block">
+        <span class="big-num">4.0+</span>
+        <h4>Average CGPA</h4>
+        <p>Students on StuCare maintain strong academic records while facing financial challenges.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Eligibility -->
+  <section class="eligibility-section">
+    <div class="section-header">
+      <span class="section-label">Eligibility</span>
+      <h2 class="section-title">Who Can <em class="accent">Apply?</em></h2>
+    </div>
+    <div class="eligibility-grid">
+      <div class="elig-card">
+        <div class="elig-check">✓</div>
+        <h4>Active Student</h4>
+        <p>Currently enrolled in a recognized educational institution in Pakistan.</p>
+      </div>
+      <div class="elig-card">
+        <div class="elig-check">✓</div>
+        <h4>Valid Transcript</h4>
+        <p>Must provide an official academic transcript at the time of registration.</p>
+      </div>
+      <div class="elig-card">
+        <div class="elig-check">✓</div>
+        <h4>Financial Need</h4>
+        <p>Facing genuine financial barriers that affect their ability to continue education.</p>
+      </div>
+      <div class="elig-card">
+        <div class="elig-check">✓</div>
+        <h4>Honest Application</h4>
+        <p>All applications must be truthful — requests are reviewed by our admin team.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="students-cta">
+    <h2>Are You a Student in Need?</h2>
+    <p *ngIf="!authenticated">Register today and submit your fund request. Our team will review it promptly.</p>
+    <p *ngIf="authenticated">Submit a new fund request or check the status of your active requests.</p>
+    <div class="cta-btns">
+      <a *ngIf="!authenticated" routerLink="/stu-signup" class="cta-btn primary">Register as Student</a>
+      <a *ngIf="authenticated" routerLink="/fundrequest" class="cta-btn primary">Submit a Request</a>
+      <a *ngIf="!authenticated" routerLink="/fundrequest" class="cta-btn outline">Submit a Request</a>
+    </div>
+  </section>
+</div>

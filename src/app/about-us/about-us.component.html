@@ -1,0 +1,108 @@
+<app-navbar></app-navbar>
+
+<div class="about-page">
+  <!-- Hero -->
+  <section class="about-hero">
+    <div class="hero-bg-orb"></div>
+    <span class="section-label">Our Mission</span>
+    <h1 class="hero-title">About <em class="accent">StuCare</em></h1>
+    <p class="hero-desc">
+      We believe every student deserves a chance to reach their full potential,
+      regardless of financial circumstance. StuCare is the bridge between
+      generous donors and deserving students.
+    </p>
+  </section>
+
+  <!-- Mission values -->
+  <section class="values-section">
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <h3>Compassion</h3>
+        <p>We approach every student's situation with empathy and a genuine desire to help them succeed.</p>
+      </div>
+      <div class="value-card featured">
+        <div class="value-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <h3>Education</h3>
+        <p>Education is a right, not a privilege. We work to remove financial barriers to academic achievement.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3>Community</h3>
+        <p>Building a community where donors and students connect to create lasting positive change.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3>Transparency</h3>
+        <p>Every fund request is reviewed by our admin team to ensure fairness and accountability.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="how-section">
+    <div class="section-header">
+      <span class="section-label">The Process</span>
+      <h2 class="section-title">How <em class="accent">StuCare</em> Works</h2>
+    </div>
+    <div class="steps-row">
+      <div class="step">
+        <div class="step-circle">01</div>
+        <div class="step-line"></div>
+        <h4>Student Registers</h4>
+        <p>Students create an account, upload their transcript, and provide their academic details.</p>
+      </div>
+      <div class="step">
+        <div class="step-circle">02</div>
+        <div class="step-line"></div>
+        <h4>Submit Request</h4>
+        <p>Eligible students submit a fund request explaining their financial need and required amount.</p>
+      </div>
+      <div class="step">
+        <div class="step-circle">03</div>
+        <div class="step-line"></div>
+        <h4>Admin Reviews</h4>
+        <p>Our dedicated admin team carefully reviews every submission for authenticity and need.</p>
+      </div>
+      <div class="step">
+        <div class="step-circle">04</div>
+        <div class="step-line last"></div>
+        <h4>Donor Connects</h4>
+        <p>Verified requests are matched with generous donors who directly support the student.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="about-cta">
+    <h2>Ready to Make a Difference?</h2>
+    <p *ngIf="!authenticated">Whether you're a student in need or a generous donor, StuCare has a place for you.</p>
+    <p *ngIf="authenticated">You are already part of our community. Submit a fund request or explore active student requests to start making a difference!</p>
+    <div class="cta-btns">
+      <a *ngIf="!authenticated" routerLink="/stu-signup" class="cta-btn primary">I'm a Student</a>
+      <a *ngIf="!authenticated" routerLink="/do-signup" class="cta-btn outline">I Want to Donate</a>
+      <a *ngIf="authenticated" routerLink="/fundrequest" class="cta-btn primary">Submit Request</a>
+      <a *ngIf="authenticated" routerLink="/donate-now" class="cta-btn outline">Explore Requests</a>
+    </div>
+  </section>
+</div>

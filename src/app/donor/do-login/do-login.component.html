@@ -1,0 +1,29 @@
+<div class="sc-form-container">
+  <div class="sc-form-box">
+    <div class="sc-form-logo">
+      <span>✦ StuCare</span>
+    </div>
+    <h2 class="sc-form-title">Donor Login</h2>
+    <p class="sc-form-subtitle">Welcome back, valued donor</p>
+
+    <form [formGroup]="form" (submit)="submit()">
+      <div class="sc-form-group">
+        <label>Email Address</label>
+        <input formControlName="email" type="email" placeholder="your@email.com" />
+      </div>
+      <div class="sc-form-group">
+        <label>Password</label>
+        <input formControlName="password" type="password" placeholder="Enter your password" />
+      </div>
+      <button type="submit" class="sc-btn">Sign In</button>
+    </form>
+
+    <div class="sc-divider"></div>
+    <p class="sc-form-footer">
+      New donor? <a routerLink="/do-signup">Create Account</a>
+    </p>
+    <p class="sc-form-footer" style="margin-top:8px">
+      <a routerLink="/sign-login">← Back to portal selection</a>
+    </p>
+  </div>
+</div>

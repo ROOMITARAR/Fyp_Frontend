@@ -1,0 +1,57 @@
+<app-navbar></app-navbar>
+
+<div class="donors-page">
+  <section class="donors-hero">
+    <div class="hero-orb"></div>
+    <span class="section-label">Our Community</span>
+    <h1 class="hero-title">Respected <em class="accent">Donors</em></h1>
+    <p class="hero-desc">
+      These incredible individuals have chosen to invest in Pakistan's future by
+      supporting students in need. Thank you for your generosity.
+    </p>
+  </section>
+
+  <section class="donors-grid-section">
+    <div class="donors-grid" *ngIf="users && users.length > 0; else noUsers">
+      <div *ngFor="let user of users; let i = index" class="donor-card" [style.animation-delay]="(i * 0.05) + 's'">
+        <div class="donor-avatar">
+          <img [src]="generateAvatarUrl(user.email)" [alt]="user.name" />
+        </div>
+        <div class="donor-info">
+          <h3>{{ user.name }}</h3>
+          <p>{{ user.email }}</p>
+        </div>
+        <div class="donor-badge">Donor</div>
+      </div>
+    </div>
+
+    <ng-template #noUsers>
+      <div class="empty-state">
+        <div class="empty-icon">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3>No donors yet</h3>
+        <p *ngIf="!authenticated">Be the first to join our community of generous donors.</p>
+        <p *ngIf="authenticated">Our list of donors is currently empty. Start by exploring our student requests!</p>
+        <a *ngIf="!authenticated" routerLink="/do-signup" class="empty-cta">Register as Donor</a>
+        <a *ngIf="authenticated" routerLink="/donate-now" class="empty-cta">Learn More</a>
+      </div>
+    </ng-template>
+  </section>
+
+  <section class="join-cta">
+    <h2>Join Our Donor Community</h2>
+    <p *ngIf="!authenticated">Register today and be featured on this page alongside our incredible donors.</p>
+    <p *ngIf="authenticated">Explore our donation platform and support bright students in need.</p>
+    <div class="cta-btns">
+      <a *ngIf="!authenticated" routerLink="/do-signup" class="cta-btn primary">Become a Donor</a>
+      <a *ngIf="authenticated" routerLink="/donate-now" class="cta-btn primary">Learn More</a>
+      <a *ngIf="!authenticated" routerLink="/donate-now" class="cta-btn outline">Learn More</a>
+    </div>
+  </section>
+</div>

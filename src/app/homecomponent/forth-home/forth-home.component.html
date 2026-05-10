@@ -1,0 +1,73 @@
+<section class="cta-section">
+  <div class="cta-bg">
+    <div class="cta-orb"></div>
+  </div>
+  <div class="cta-content">
+    <div class="cta-text">
+      <span class="section-label">Take Action</span>
+      <h2 class="cta-title">Need Financial <br><em class="accent">Support?</em></h2>
+      <p class="cta-desc">
+        If you're a registered student facing financial difficulties,
+        submit a fund request and our team will review it promptly.
+        Your future matters — let us help.
+      </p>
+      <ul class="cta-steps">
+        <li>
+          <span class="step-num">01</span>
+          <span>Register as a student with your transcript</span>
+        </li>
+        <li>
+          <span class="step-num">02</span>
+          <span>Submit a fund request with your details</span>
+        </li>
+        <li>
+          <span class="step-num">03</span>
+          <span>Admin reviews and connects you with a donor</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="cta-form-box">
+      <h3 class="form-title">Quick Request</h3>
+      <p class="form-subtitle">Already registered? Submit directly.</p>
+
+      <form #quickForm="ngForm" (ngSubmit)="submitForm(quickForm)">
+        <div class="sc-form-group">
+          <label>Registered Email</label>
+          <input type="email" name="email" ngModel required placeholder="your@email.com" />
+        </div>
+
+        <div class="sc-form-group">
+          <label>Show Identity?</label>
+          <select name="fundraisingOption" ngModel required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="yes">Yes — Show my name</option>
+            <option value="no">No — Remain anonymous</option>
+          </select>
+        </div>
+
+        <div class="sc-form-group">
+          <label>Amount Needed (PKR)</label>
+          <input type="number" name="fundraisingAmount" ngModel required min="1" placeholder="e.g. 50000" />
+        </div>
+
+        <div class="sc-form-group">
+          <label>Why Do You Need Help?</label>
+          <textarea name="fundraisingRequest" ngModel required rows="3" placeholder="Briefly describe your situation..."></textarea>
+        </div>
+
+        <div class="form-note" *ngIf="quickForm.invalid && quickForm.touched">
+          Please fill out all fields correctly.
+        </div>
+
+        <button type="submit" class="sc-btn" [disabled]="quickForm.invalid">
+          Submit Request
+        </button>
+      </form>
+
+      <p class="form-footer-note">
+        Not registered yet? <a routerLink="/stu-signup">Sign up here</a>
+      </p>
+    </div>
+  </div>
+</section>

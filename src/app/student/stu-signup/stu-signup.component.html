@@ -1,0 +1,74 @@
+<div class="sc-form-container signup-wide">
+  <div class="sc-form-box wide">
+    <div class="sc-form-logo">
+      <span>✦ StuCare</span>
+    </div>
+    <h2 class="sc-form-title">Student Registration</h2>
+    <p class="sc-form-subtitle">Create your student account to request financial assistance</p>
+
+    <form [formGroup]="form" (submit)="submit()">
+      <div class="form-row">
+        <div class="sc-form-group">
+          <label>Full Name</label>
+          <input formControlName="name" type="text" placeholder="Your full name" />
+        </div>
+        <div class="sc-form-group">
+          <label>Email Address</label>
+          <input formControlName="email" type="email" placeholder="your@email.com" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="sc-form-group">
+          <label>Password <span class="hint">(4-8 characters)</span></label>
+          <input formControlName="password" type="password" placeholder="Create a password" />
+        </div>
+        <div class="sc-form-group">
+          <label>Confirm Password</label>
+          <input formControlName="confirmpassword" type="password" placeholder="Repeat your password" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="sc-form-group">
+          <label>Gender</label>
+          <select formControlName="gender">
+            <option value="" disabled selected>Select gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="sc-form-group">
+          <label>CGPA <span class="hint">(e.g. 3.50)</span></label>
+          <input formControlName="cgpa" type="text" placeholder="e.g. 3.50" />
+        </div>
+      </div>
+
+      <div class="sc-form-group">
+        <label>Upload Transcript <span class="hint">(.pdf, .doc, .docx)</span></label>
+        <div class="file-upload-area" [class.has-file]="transcriptFile">
+          <input formControlName="transcriptFile" type="file" (change)="onFileChange($event)" accept=".pdf,.doc,.docx" id="transcript" class="file-input" />
+          <label for="transcript" class="file-label">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="17 8 12 3 7 8"/>
+              <line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+            <span>{{ transcriptFile ? transcriptFile.name : 'Click to upload transcript' }}</span>
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="sc-btn">Create Student Account</button>
+    </form>
+
+    <div class="sc-divider"></div>
+    <p class="sc-form-footer">
+      Already have an account? <a routerLink="/stu-login">Login Here</a>
+    </p>
+    <p class="sc-form-footer" style="margin-top:8px">
+      <a routerLink="/sign-login">← Back to portal selection</a>
+    </p>
+  </div>
+</div>

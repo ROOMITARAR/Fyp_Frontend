@@ -1,0 +1,240 @@
+.donors-page { background: var(--black); min-height: 100vh; }
+
+.donors-hero {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-xl) var(--space-xl);
+  border-bottom: 1px solid rgba(201,168,76,0.08);
+  position: relative;
+  overflow: hidden;
+  animation: fadeUp 0.5s ease;
+}
+
+.hero-orb {
+  position: absolute;
+  width: 500px; height: 500px;
+  top: -200px; left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-sm);
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: var(--space-sm);
+}
+
+.accent { color: var(--gold); font-style: italic; }
+
+.hero-desc {
+  font-size: 1rem;
+  color: var(--grey-light);
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Grid */
+.donors-grid-section {
+  padding: var(--space-xl);
+  min-height: 300px;
+}
+
+.donors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-md);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.donor-card {
+  background: var(--black-card);
+  border: 1px solid rgba(201,168,76,0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  text-align: center;
+  transition: var(--transition);
+  animation: fadeUp 0.5s ease both;
+  position: relative;
+}
+
+.donor-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+}
+
+.donor-card:hover {
+  border-color: rgba(201,168,76,0.28);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+}
+
+.donor-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto var(--space-md);
+  border: 2px solid rgba(201,168,76,0.2);
+  transition: var(--transition);
+}
+
+.donor-card:hover .donor-avatar {
+  border-color: var(--gold);
+}
+
+.donor-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.donor-info h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.donor-info p {
+  font-size: 0.78rem;
+  color: var(--grey);
+  margin-bottom: var(--space-md);
+}
+
+.donor-badge {
+  display: inline-block;
+  padding: 3px 14px;
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 100px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: var(--space-2xl);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.empty-icon {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: rgba(201,168,76,0.06);
+  border: 1px solid rgba(201,168,76,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-lg);
+  color: var(--grey);
+}
+
+.empty-state h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: var(--space-sm);
+}
+
+.empty-state p {
+  font-size: 0.9rem;
+  color: var(--grey-light);
+  margin-bottom: var(--space-lg);
+}
+
+.empty-cta {
+  display: inline-block;
+  padding: 10px 24px;
+  background: var(--gold);
+  color: var(--black);
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.empty-cta:hover {
+  background: var(--gold-light);
+  color: var(--black);
+}
+
+/* Join CTA */
+.join-cta {
+  padding: var(--space-2xl) var(--space-xl);
+  text-align: center;
+  background: var(--black-soft);
+  border-top: 1px solid rgba(201,168,76,0.08);
+}
+
+.join-cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: var(--space-sm);
+}
+
+.join-cta p {
+  font-size: 0.95rem;
+  color: var(--grey-light);
+  margin-bottom: var(--space-lg);
+}
+
+.cta-btns { display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap; }
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.cta-btn.primary { background: var(--gold); color: var(--black); }
+.cta-btn.primary:hover { background: var(--gold-light); color: var(--black); transform: translateY(-2px); }
+.cta-btn.outline { background: transparent; color: var(--gold); border: 1px solid rgba(201,168,76,0.3); }
+.cta-btn.outline:hover { border-color: var(--gold); background: var(--gold-dim); color: var(--gold-light); }
+
+@media (max-width: 600px) {
+  .donors-grid-section, .join-cta { padding: var(--space-lg); }
+  .donors-hero { padding: var(--space-xl) var(--space-lg) var(--space-lg); }
+}

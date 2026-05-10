@@ -1,0 +1,37 @@
+<div class="sc-form-container">
+  <div class="sc-form-box">
+    <div class="sc-form-logo">
+      <span>✦ StuCare</span>
+    </div>
+    <h2 class="sc-form-title">Join as Donor</h2>
+    <p class="sc-form-subtitle">Create your account and start making a difference</p>
+
+    <form [formGroup]="form" (submit)="submit()">
+      <div class="sc-form-group">
+        <label>Full Name</label>
+        <input formControlName="name" type="text" placeholder="Your full name" />
+      </div>
+      <div class="sc-form-group">
+        <label>Email Address</label>
+        <input formControlName="email" type="email" placeholder="your@email.com" />
+      </div>
+      <div class="sc-form-group">
+        <label>Password <span class="hint">(4-8 characters)</span></label>
+        <input formControlName="password" type="password" placeholder="Create a password" />
+      </div>
+      <div class="sc-form-group">
+        <label>Confirm Password</label>
+        <input formControlName="confirmpassword" type="password" placeholder="Repeat your password" />
+      </div>
+      <button type="submit" class="sc-btn">Create Donor Account</button>
+    </form>
+
+    <div class="sc-divider"></div>
+    <p class="sc-form-footer">
+      Already have an account? <a routerLink="/do-login">Login Here</a>
+    </p>
+    <p class="sc-form-footer" style="margin-top:8px">
+      <a routerLink="/sign-login">← Back to portal selection</a>
+    </p>
+  </div>
+</div>

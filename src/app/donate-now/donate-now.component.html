@@ -1,0 +1,92 @@
+<app-navbar></app-navbar>
+
+<div class="donate-page">
+  <section class="donate-hero">
+    <div class="hero-orb"></div>
+    <span class="section-label">Make an Impact</span>
+    <h1 class="hero-title">Donate <em class="accent">Now</em></h1>
+    <p class="hero-desc">
+      Your contribution — no matter the size — changes a student's life.
+      Join hundreds of donors who are investing in Pakistan's future.
+    </p>
+  </section>
+
+  <!-- Impact numbers -->
+  <section class="impact-section">
+    <div class="impact-grid">
+      <div class="impact-card">
+        <span class="impact-num">₨ 10K</span>
+        <h4>Covers Exam Fees</h4>
+        <p>Allows a student to sit their semester exams without financial stress.</p>
+      </div>
+      <div class="impact-card featured">
+        <div class="impact-popular">Most Popular</div>
+        <span class="impact-num">₨ 50K</span>
+        <h4>One Semester</h4>
+        <p>Covers a student's full semester tuition fees and study materials.</p>
+      </div>
+      <div class="impact-card">
+        <span class="impact-num">₨ 2L+</span>
+        <h4>Full Year Support</h4>
+        <p>Sponsors a complete academic year, giving a student total peace of mind.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why donate -->
+  <section class="why-section">
+    <div class="section-header">
+      <span class="section-label">Why Donate</span>
+      <h2 class="section-title">Your Money <em class="accent">Goes Directly</em> to Students</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h4>100% Transparent</h4>
+        <p>Every fund request is manually reviewed by our admin team. We ensure authenticity before matching with donors.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h4>Real Students, Real Need</h4>
+        <p>All students provide academic transcripts and verified details. You know exactly who you're helping.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <h4>Track Your Impact</h4>
+        <p>See your profile on our donors page and know that your contribution is making a measurable difference.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="donate-cta">
+    <h2>Ready to Change a Life?</h2>
+    <p *ngIf="!authenticated">Register as a donor and start your journey of giving.</p>
+    <p *ngIf="authenticated">Explore our community of incredible donors or view student requests.</p>
+    <div class="cta-btns">
+      <a *ngIf="!authenticated" routerLink="/do-signup" class="cta-btn primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        Create Donor Account
+      </a>
+      <a *ngIf="authenticated" routerLink="/donors" class="cta-btn primary">View Our Donors</a>
+      <a *ngIf="!authenticated" routerLink="/donors" class="cta-btn outline">View Our Donors</a>
+    </div>
+  </section>
+</div>

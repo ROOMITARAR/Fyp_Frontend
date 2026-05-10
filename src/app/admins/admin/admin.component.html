@@ -1,0 +1,32 @@
+<div class="sc-form-container">
+  <div class="sc-form-box">
+    <div class="sc-form-logo">
+      <span>✦ StuCare</span>
+    </div>
+    <div class="admin-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      Administrator Access
+    </div>
+    <h2 class="sc-form-title">Admin Login</h2>
+    <p class="sc-form-subtitle">Restricted access — authorised personnel only</p>
+
+    <form [formGroup]="form" (submit)="submit()">
+      <div class="sc-form-group">
+        <label>Admin Email</label>
+        <input formControlName="email" type="email" placeholder="admin@stucare.com" />
+      </div>
+      <div class="sc-form-group">
+        <label>Password</label>
+        <input formControlName="password" type="password" placeholder="Enter your password" />
+      </div>
+      <button type="submit" class="sc-btn">Access Admin Panel</button>
+    </form>
+
+    <div class="sc-divider"></div>
+    <p class="sc-form-footer">
+      <a routerLink="/sign-login">← Back to portal selection</a>
+    </p>
+  </div>
+</div>

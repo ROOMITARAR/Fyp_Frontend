@@ -1,0 +1,71 @@
+<section class="about-section">
+  <div class="section-header">
+    <span class="section-label">Our Story</span>
+    <h2 class="section-title">
+      Collaborating for
+      <em class="accent"> Student</em> Dreams
+    </h2>
+  </div>
+
+  <div class="tab-bar">
+    <button class="tab-btn" [class.active]="!showHowWeWorkContent" (click)="showIntroduction()">
+      Introduction
+    </button>
+    <button class="tab-btn" [class.active]="showHowWeWorkContent" (click)="showHowWeWork()">
+      How We Work
+    </button>
+  </div>
+
+  <div class="about-content">
+    <div class="about-image">
+      <div class="image-frame">
+        <img src="../assets/assetss/do.jpg" alt="Student Care" />
+        <div class="image-overlay"></div>
+      </div>
+      <div class="image-decoration"></div>
+    </div>
+
+    <div class="about-text" *ngIf="!showHowWeWorkContent">
+      <h3 class="content-title">Heartfelt Contributions,<br> Educational Transformations</h3>
+      <p class="content-lead">Empower dreams, sponsor futures.</p>
+      <p class="content-body">
+        Welcome to Student Care, where compassion meets education. Our mission
+        is to create a platform that connects generous hearts with the aspirations
+        of students in need. Through your donations, we strive to break down
+        financial barriers and provide students with the support they need to
+        achieve their academic dreams.
+      </p>
+      <p class="content-body">
+        Join us on this journey of empowerment and make a lasting difference
+        in a student's life today. Together, let's build a brighter tomorrow.
+      </p>
+      <a routerLink="/about-us" class="content-link">
+        Learn more
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="about-text" *ngIf="showHowWeWorkContent">
+      <h3 class="content-title">Our Seamless Approach<br>to Student Support</h3>
+      <p class="content-lead">Simple yet powerful philosophy.</p>
+      <p class="content-body">
+        At Student Care, our approach is built on fostering meaningful connections
+        between compassionate donors and deserving students. We meticulously identify
+        students facing financial barriers to education, ensuring that every donation
+        goes directly towards transforming lives.
+      </p>
+      <p class="content-body">
+        Our transparent and efficient process guarantees that your support directly
+        impacts a student's educational journey.
+      </p>
+      <a routerLink="/about-us" class="content-link">
+        Learn more
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

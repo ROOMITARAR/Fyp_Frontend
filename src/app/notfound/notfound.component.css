@@ -1,0 +1,110 @@
+.notfound-page {
+  min-height: 100vh;
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.notfound-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bg-orb {
+  position: absolute;
+  width: 600px; height: 600px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.bg-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black 30%, transparent 100%);
+}
+
+.notfound-content {
+  position: relative;
+  text-align: center;
+  padding: var(--space-xl);
+  animation: fadeUp 0.6s ease;
+}
+
+.error-code {
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 20vw, 14rem);
+  font-weight: 300;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(201,168,76,0.3);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: var(--space-md);
+  position: relative;
+}
+
+.error-code::after {
+  content: '404';
+  position: absolute;
+  inset: 0;
+  color: rgba(201,168,76,0.06);
+  -webkit-text-stroke: 0;
+  filter: blur(2px);
+}
+
+.error-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto var(--space-lg);
+  opacity: 0.5;
+}
+
+.error-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: var(--space-md);
+}
+
+.error-desc {
+  font-size: 1rem;
+  color: var(--grey-light);
+  margin-bottom: var(--space-xl);
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: var(--gold);
+  color: var(--black);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.home-btn:hover {
+  background: var(--gold-light);
+  color: var(--black);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(201,168,76,0.25);
+}

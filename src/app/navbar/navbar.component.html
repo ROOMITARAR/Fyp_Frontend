@@ -1,0 +1,53 @@
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a routerLink="/home" class="brand-link">
+      <span class="brand-icon">✦</span>
+      <span class="brand-name">StuCare</span>
+    </a>
+  </div>
+
+  <ul class="navbar-links">
+    <li *ngFor="let page of pages">
+      <a
+        [routerLink]="[getRouteLink(page)]"
+        [class.active]="isActive(page)"
+        class="nav-link">
+        {{ page }}
+      </a>
+    </li>
+  </ul>
+
+  <div class="navbar-actions">
+    <ng-container *ngIf="authenticated; else loginBtn">
+      <button class="btn-logout" (click)="logout()">
+        <span>Logout</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <polyline points="16 17 21 12 16 7"/>
+          <line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+      </button>
+    </ng-container>
+    <ng-template #loginBtn>
+      <a routerLink="/sign-login" class="btn-login">Login / Sign Up</a>
+    </ng-template>
+  </div>
+
+  <button class="navbar-toggle" (click)="menuOpen = !menuOpen" [class.open]="menuOpen">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" [class.open]="menuOpen">
+  <a *ngFor="let page of pages"
+     [routerLink]="[getRouteLink(page)]"
+     (click)="menuOpen = false"
+     class="mobile-link">{{ page }}</a>
+  <div class="mobile-divider"></div>
+  <ng-container *ngIf="authenticated; else mobileLogin">
+    <button class="btn-logout mobile" (click)="logout(); menuOpen = false">Logout</button>
+  </ng-container>
+  <ng-template #mobileLogin>
+    <a routerLink="/sign-login" (click)="menuOpen = false" class="btn-login mobile">Login / Sign Up</a>
+  </ng-template>
+</div>

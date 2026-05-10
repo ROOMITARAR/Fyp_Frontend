@@ -1,0 +1,93 @@
+<div class="portal-page">
+  <div class="portal-bg">
+    <div class="portal-orb portal-orb-1"></div>
+    <div class="portal-orb portal-orb-2"></div>
+    <div class="portal-grid"></div>
+  </div>
+
+  <div class="portal-header">
+    <a routerLink="/home" class="back-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+      </svg>
+      Back to Home
+    </a>
+    <div class="portal-brand">
+      <span class="brand-icon">✦</span>
+      <span>StuCare</span>
+    </div>
+  </div>
+
+  <div class="portal-content">
+    <div class="portal-title-block">
+      <h1 class="portal-title">Choose Your <em class="accent">Portal</em></h1>
+      <p class="portal-subtitle">Select your role to access the appropriate section</p>
+    </div>
+
+    <div class="portals-grid">
+      <!-- Student Portal -->
+      <div class="portal-card student">
+        <div class="card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <div class="card-label">Student</div>
+        <h3 class="card-title">Student Portal</h3>
+        <p class="card-desc">
+          Register or log in to access financial assistance, submit fund requests, and track your application status.
+        </p>
+        <div class="card-features">
+          <span>Fund Requests</span>
+          <span>Transcript Upload</span>
+          <span>Application Tracking</span>
+        </div>
+        <a routerLink="/stu-login" class="card-btn primary">Login</a>
+        <a routerLink="/stu-signup" class="card-btn outline">Create Account</a>
+      </div>
+
+      <!-- Admin Portal -->
+      <div class="portal-card admin featured">
+        <div class="featured-tag">Admin</div>
+        <div class="card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="card-label">Administrator</div>
+        <h3 class="card-title">Admin Portal</h3>
+        <p class="card-desc">
+          Manage the platform, review fund requests, oversee students and donors, and ensure smooth operations.
+        </p>
+        <div class="card-features">
+          <span>Review Requests</span>
+          <span>Manage Users</span>
+          <span>Platform Control</span>
+        </div>
+        <a routerLink="/admin-login" class="card-btn gold">Login as Admin</a>
+      </div>
+
+      <!-- Donor Portal -->
+      <div class="portal-card donor">
+        <div class="card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <div class="card-label">Donor</div>
+        <h3 class="card-title">Donor Portal</h3>
+        <p class="card-desc">
+          Join our community of generous donors and make a direct impact on students' educational journeys.
+        </p>
+        <div class="card-features">
+          <span>Make Donations</span>
+          <span>View Students</span>
+          <span>Track Impact</span>
+        </div>
+        <a routerLink="/do-login" class="card-btn primary">Login</a>
+        <a routerLink="/do-signup" class="card-btn outline">Create Account</a>
+      </div>
+    </div>
+  </div>
+</div>

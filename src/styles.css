@@ -1,0 +1,340 @@
+/* =========================================
+   STUCARE — GLOBAL DESIGN SYSTEM
+   ========================================= */
+
+:root {
+  /* Colors */
+  --black:       #0A0A0A;
+  --black-soft:  #141414;
+  --black-card:  #1A1A1A;
+  --gold:        #C9A84C;
+  --gold-light:  #E2C97E;
+  --gold-dim:    rgba(201, 168, 76, 0.15);
+  --white:       #F5F0E8;
+  --white-soft:  #D9D3C7;
+  --grey:        #6B6560;
+  --grey-light:  #9B948E;
+  --error:       #E05A5A;
+  --success:     #5AB88A;
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Outfit', sans-serif;
+
+  /* Spacing */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  32px;
+  --space-xl:  64px;
+  --space-2xl: 96px;
+
+  /* Border */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* Transitions */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Scale */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--gold-light);
+}
+
+/* =========================================
+   SHARED FORM STYLES
+   ========================================= */
+
+.sc-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: var(--space-lg);
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+}
+
+.sc-form-container::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.sc-form-container::after {
+  content: '';
+  position: absolute;
+  bottom: -200px;
+  left: -200px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.sc-form-box {
+  width: 100%;
+  max-width: 460px;
+  background: var(--black-card);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-lg);
+  position: relative;
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.sc-form-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.sc-form-logo {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.sc-form-logo span {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.sc-form-title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--white);
+  text-align: center;
+  margin-bottom: var(--space-xs);
+  letter-spacing: 0.02em;
+}
+
+.sc-form-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--grey-light);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.sc-form-group {
+  margin-bottom: var(--space-md);
+}
+
+.sc-form-group label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grey-light);
+  margin-bottom: var(--space-xs);
+}
+
+.sc-form-group input,
+.sc-form-group select,
+.sc-form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: var(--radius-sm);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: var(--transition);
+  outline: none;
+}
+
+.sc-form-group input:focus,
+.sc-form-group select:focus,
+.sc-form-group textarea:focus {
+  border-color: var(--gold);
+  background: rgba(201, 168, 76, 0.05);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.08);
+}
+
+.sc-form-group select option {
+  background: var(--black-card);
+  color: var(--white);
+}
+
+.sc-form-group input[type="file"] {
+  padding: 10px 16px;
+  cursor: pointer;
+  color: var(--grey-light);
+}
+
+.sc-form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.sc-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: var(--space-sm);
+}
+
+.sc-btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.25);
+}
+
+.sc-btn:disabled {
+  background: var(--grey);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.sc-btn-outline {
+  width: 100%;
+  padding: 14px;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  display: block;
+  text-decoration: none;
+}
+
+.sc-btn-outline:hover {
+  border-color: var(--gold);
+  background: var(--gold-dim);
+  color: var(--gold-light);
+}
+
+.sc-form-footer {
+  text-align: center;
+  margin-top: var(--space-md);
+  font-size: 0.88rem;
+  color: var(--grey-light);
+}
+
+.sc-form-footer a {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.sc-divider {
+  height: 1px;
+  background: rgba(201, 168, 76, 0.12);
+  margin: var(--space-lg) 0;
+}
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* =========================================
+   SCROLLBAR
+   ========================================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 168, 76, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 168, 76, 0.5);
+}

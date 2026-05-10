@@ -1,0 +1,112 @@
+<app-navbar></app-navbar>
+
+<div class="fundrequest-page">
+  <div class="page-header">
+    <span class="section-label">Financial Aid</span>
+    <h1 class="page-title">Fund <em class="accent">Request</em></h1>
+    <p class="page-desc">Submit your request below. Our admin team will review it and contact you via email.</p>
+  </div>
+
+  <div class="fundrequest-grid">
+    <!-- Form -->
+    <div class="form-panel">
+      <h3 class="panel-title">Submit Your Request</h3>
+
+      <div *ngIf="!studentEmail" class="login-warning-box">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <span>You must be logged in as a student to submit a fund request. <a routerLink="/stu-login" class="login-link">Login Here</a></span>
+      </div>
+
+      <form #fundRequestForm="ngForm" (ngSubmit)="submitForm(fundRequestForm)">
+        <div class="sc-form-group">
+          <label>Registered Student Email</label>
+          <input type="email" name="email" [ngModel]="studentEmail" required readonly [placeholder]="studentEmail ? '' : 'your@email.com'" />
+        </div>
+
+        <div class="sc-form-group">
+          <label>Show Your Identity?</label>
+          <select name="fundraisingOption" ngModel required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="yes">Yes — Show my name to donors</option>
+            <option value="no">No — Remain anonymous</option>
+          </select>
+        </div>
+
+        <div class="sc-form-group">
+          <label>Amount Required (PKR)</label>
+          <input type="number" name="fundraisingAmount" ngModel required min="1" placeholder="e.g. 50000" />
+        </div>
+
+        <div class="sc-form-group">
+          <label>Reason for Request</label>
+          <textarea name="fundraisingRequest" ngModel required rows="5"
+            placeholder="Please describe your financial situation and how this support will help you..."></textarea>
+        </div>
+
+        <div class="form-validation-msg" *ngIf="fundRequestForm.invalid && fundRequestForm.touched">
+          Please fill out all fields correctly.
+        </div>
+        <div class="form-ready-msg" *ngIf="fundRequestForm.valid">
+          ✓ Form looks good — please review before submitting.
+        </div>
+
+        <button type="submit" class="sc-btn" [disabled]="fundRequestForm.invalid">
+          Submit Fund Request
+        </button>
+      </form>
+    </div>
+
+    <!-- Instructions -->
+    <div class="instructions-panel">
+      <h3 class="panel-title">How It Works</h3>
+      <ul class="instruction-list">
+        <li>
+          <div class="inst-num">01</div>
+          <div>
+            <strong>Use your registered email</strong>
+            <p>Only emails registered in the student portal are accepted.</p>
+          </div>
+        </li>
+        <li>
+          <div class="inst-num">02</div>
+          <div>
+            <strong>Identity preference</strong>
+            <p>Choose "Yes" to let donors see your name. "No" keeps you anonymous.</p>
+          </div>
+        </li>
+        <li>
+          <div class="inst-num">03</div>
+          <div>
+            <strong>Realistic amount</strong>
+            <p>Enter the actual amount you need in PKR as a number.</p>
+          </div>
+        </li>
+        <li>
+          <div class="inst-num">04</div>
+          <div>
+            <strong>Detailed explanation</strong>
+            <p>Be specific about your circumstances to help donors understand your need.</p>
+          </div>
+        </li>
+        <li>
+          <div class="inst-num">05</div>
+          <div>
+            <strong>Track your request</strong>
+            <p>Our admin team reviews every request. You will be notified via email.</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="info-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <p>Not registered yet? <a routerLink="/stu-signup">Create a student account first</a></p>
+      </div>
+    </div>
+  </div>
+</div>
